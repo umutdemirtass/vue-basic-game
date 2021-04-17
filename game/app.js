@@ -4,7 +4,8 @@ new Vue({
         player_heal : 100,
         monster_heal : 100,
         game_on : false,
-        logs : []
+        logs : [],
+        disabledButton : false
     },
     methods: {
         start_game : function(){
@@ -32,6 +33,7 @@ new Vue({
             this.player_heal+=score;
             this.add_to_log({turn : "p", text : "HEAL UP ("+ score +")"});
             this.monster_attack();
+            this.disabledButton = true;
         },
         give_up : function(){
             this.player_heal = 0;
