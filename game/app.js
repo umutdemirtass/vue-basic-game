@@ -51,7 +51,8 @@ new Vue({
             if (confirm("YOU LOST THE GAME. Do you want to play again ?")) {
                 this.player_heal = 100;
                 this.monster_heal = 100;
-                this.logs=[]
+                this.logs = [];
+                this.disableButton = false;
             }
         }
         else if (value >= 100) {
@@ -64,7 +65,8 @@ new Vue({
             if (confirm("YOU WIN. Do you want to play game again ?")) {
                 this.player_heal = 100;
                 this.monster_heal = 100;
-                this.logs=[]
+                this.logs=[];
+                this.disableButton = false;
             }
         }
         
