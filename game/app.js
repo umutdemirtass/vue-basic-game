@@ -5,7 +5,8 @@ new Vue({
         monster_heal : 100,
         game_on : false,
         logs : [],
-        disabledButton : false
+        disableButton : false,
+        disabledButton : false,
     },
     methods: {
         start_game : function(){
@@ -27,13 +28,14 @@ new Vue({
             this.monster_heal-=score;
             this.add_to_log({turn : "p", text : "SPECIAL PLAYER ATTACK ("+ score +")"});
             this.monster_attack();
+            this.disabledButton = true;
         },
         heal_up : function(){
             var score = Math.ceil(Math.random()*16);
             this.player_heal+=score;
             this.add_to_log({turn : "p", text : "HEAL UP ("+ score +")"});
             this.monster_attack();
-            this.disabledButton = true;
+            this.disableButton = true;
         },
         give_up : function(){
             this.player_heal = 0;
@@ -53,6 +55,7 @@ new Vue({
                 this.monster_heal = 100;
                 this.logs = [];
                 this.disableButton = false;
+                this.disabledButton = false;
             }
         }
         else if (value >= 100) {
@@ -67,6 +70,7 @@ new Vue({
                 this.monster_heal = 100;
                 this.logs=[];
                 this.disableButton = false;
+                this.disabledButton = false;
             }
         }
         
