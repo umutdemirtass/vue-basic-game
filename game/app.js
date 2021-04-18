@@ -70,7 +70,7 @@ new Vue({
                 this.monster_heal = 100;
                 this.logs=[];
                 this.disableButton = false;
-                this.disabledButton = false;
+                this.disabledButton = true;
             }
         }
         
